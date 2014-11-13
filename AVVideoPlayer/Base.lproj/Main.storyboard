@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NMu-ZN-FTI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="IDX-Xo-Bxi">
+                                    <size key="itemSize" width="320" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollectionViewCell" id="EDh-gH-ngV" customClass="EventCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNI-U0-aVP" customClass="RVMPAVPlayer">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvH-42-929" customClass="AVPlayerPlaybackView">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78t-qg-f1d">
+                                                            <rect key="frame" x="134" y="75" width="52" height="30"/>
+                                                            <state key="normal" title="Play">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="play:" destination="xNI-U0-aVP" eventType="touchUpInside" id="lTj-RD-Sl7"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="UvH-42-929" firstAttribute="top" secondItem="xNI-U0-aVP" secondAttribute="top" id="IVj-11-H8j"/>
+                                                        <constraint firstItem="UvH-42-929" firstAttribute="leading" secondItem="xNI-U0-aVP" secondAttribute="leading" id="TpO-bU-qnG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UvH-42-929" secondAttribute="bottom" id="c0b-pR-8if"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UvH-42-929" secondAttribute="trailing" id="w0Q-hP-hPE"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="mPlaybackView" destination="UvH-42-929" id="LHG-4a-2uW"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="xNI-U0-aVP" secondAttribute="trailing" constant="-8" id="4cw-8g-Teq"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="xNI-U0-aVP" secondAttribute="bottom" constant="-8" id="Wae-EV-6Pq"/>
+                                            <constraint firstItem="xNI-U0-aVP" firstAttribute="top" secondItem="EDh-gH-ngV" secondAttribute="topMargin" constant="-8" id="uLx-X1-3Xo"/>
+                                            <constraint firstItem="xNI-U0-aVP" firstAttribute="leading" secondItem="EDh-gH-ngV" secondAttribute="leadingMargin" constant="-8" id="w8k-GQ-cIl"/>
+                                        </constraints>
+                                        <size key="customSize" width="320" height="180"/>
+                                        <connections>
+                                            <outlet property="playerHolderView" destination="xNI-U0-aVP" id="Ymp-hH-xYZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="2IJ-Y4-28v"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="rAw-57-JgA"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NMu-ZN-FTI" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="Eof-A8-OH9"/>
+                            <constraint firstItem="NMu-ZN-FTI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="TMJ-DG-ITY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NMu-ZN-FTI" secondAttribute="trailing" constant="-16" id="Xj8-yQ-vqL"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NMu-ZN-FTI" secondAttribute="bottom" id="mlm-NW-Sm0"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                    <connections>
+                        <outlet property="eventCollectionView" destination="NMu-ZN-FTI" id="c8X-Wk-BEE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
